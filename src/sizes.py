@@ -7,7 +7,7 @@ def parse_size(text):
     """Turn a string like "10MB" into a byte count."""
     trimmed = text.strip()
     digits = "".join(char for char in trimmed if char.isdigit())
-    unit = trimmed[len(digits):]
+    unit = trimmed[len(digits):].upper()
     return int(digits) * UNITS[unit]
 
 
