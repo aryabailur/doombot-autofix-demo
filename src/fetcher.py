@@ -11,8 +11,6 @@ def _session():
 
 def fetch(url, timeout):
     """Fetch a URL and return its text."""
-    if timeout is None:
-        timeout = DEFAULT_TIMEOUT
     response = _session().get(url, timeout=timeout)
     response.raise_for_status()
     return response.text
